@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class ConsoleExercises {
     public static void main(String[] args) {
         double pi = 3.14159;
-        System.out.printf("the input of pi is approximately %.4s %n",pi);
+        System.out.printf("the input of pi is approximately %.2f %n",pi);
         Scanner scan = new Scanner(System.in);
 //        scan.useDelimiter("\n");
         System.out.print("enter a integer ");
