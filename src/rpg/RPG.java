@@ -1,5 +1,7 @@
 package rpg;
 
+import java.util.ArrayList;
+
 public class RPG {
     public static void main(String[] args) {
         Fighter fighter1 = new Fighter();
@@ -24,5 +26,7 @@ public class RPG {
         System.out.println(d20roll);
 
         System.out.println(Fighter.totalFighters);
+
+        ArrayList<Monster> monsterList = new ArrayList<>();
     }
 }
