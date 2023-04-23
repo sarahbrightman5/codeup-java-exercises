@@ -11,7 +11,6 @@ public class Input {
     }
 
     public String getString(){
-        System.out.println("Enter a string:");
         return scanner.nextLine();
     }
 
@@ -35,16 +34,33 @@ public class Input {
 
     public int getInt(int min, int max) {
         System.out.print("Enter a number between " + min + " and " + max + ": ");
-        int userNum = scanner.nextInt();
+        String userInput = getString();
+        try {
+            Integer.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println("You did not enter a valid number. Please try again.");
+            return getInt(min, max);
+        }
+        int userNum = Integer.parseInt(userInput);
         if (userNum >= min && userNum <= max) {
             return userNum;
+        } else {
+            System.out.println("You did not enter a number between " + min + " and " + max + ". Try again.");
+            return getInt(min, max);
         }
-        return getInt(min, max);
     }
 
     public int getInt(){
         System.out.println("Enter an integer:");
-        return scanner.nextInt();
+        String userInput = getString();
+        try {
+            Integer.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println("You did not enter a valid number. Please try again.");
+            return getInt();
+        }
+        int userNum = Integer.parseInt(userInput);
+        return Integer.parseInt(userInput);
     }
 
     public int getInt(String prompt){
@@ -54,16 +70,34 @@ public class Input {
 
     public double getDouble(double min, double max){
         System.out.printf("Enter a number between %.1f and %.1f:", min, max);
-        double userNum = scanner.nextDouble();
-        if (userNum >= min && userNum <= max) {
-            return userNum;
+        String userInput = getString();
+        try {
+            Double.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println("You did not enter a valid number. Please try again.");
+            return getDouble(min, max);
         }
-        return getDouble(min, max);
+        Double userNum = Double.parseDouble(userInput);
+        if (userNum >= min && userNum <= max) {
+
+            return userNum;
+        } else {
+            System.out.println("You did not enter a number between " + min + " and " + max + ". Try again.");
+            return getDouble(min, max);
+        }
     }
 
     public double getDouble(){
         System.out.println("Enter a number (decimals allowed):");
-        return scanner.nextDouble();
+        String userInput = getString();
+        try {
+            Double.valueOf(userInput);
+        } catch (NumberFormatException e) {
+            System.out.println("You did not enter a valid number. Please try again.");
+            return getDouble();
+        }
+        Double userNum = Double.parseDouble(userInput);
+        return userNum;
     }
 
     public double getDouble(String prompt){
