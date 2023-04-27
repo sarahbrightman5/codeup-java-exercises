@@ -1,7 +1,6 @@
-import javax.print.attribute.standard.PrinterMakeAndModel;
 import java.util.Arrays;
 
-public class ArrayExercises {
+public class ArraysExercises {
     public static Person[] addPerson(Person[] personArray, Person newPerson){
         Person[] newPersonArray = Arrays.copyOf(personArray, personArray.length +1);
         newPersonArray[newPersonArray.length-1]= newPerson;
@@ -18,7 +17,7 @@ public class ArrayExercises {
             System.out.println(personloop.getName());
         }
     Person sunshine = new Person("Sunshine");
-        Person[] newPersonArray = ArrayExercises.addPerson(person,sunshine);
+        Person[] newPersonArray = ArraysExercises.addPerson(person,sunshine);
         for(Person persons: newPersonArray){
             System.out.println(persons.getName());
         }
